@@ -343,6 +343,7 @@ function Authenticate-AzureRmUser
     Log-Message "Logging in as service principal for '$($AadTenantId)'"
     if ($IsCli2)
     {
+        az cloud set --name AzureChinaCloud
         $results = az login -u $AadWebClientId --service-principal --tenant $AadTenantId -p $AadWebClientAppKey --output json | Out-String
         if ($results.Contains("error"))
         {
@@ -2446,7 +2447,7 @@ function Get-QueueMessages
 
     # Rest api url to receive messages from Service bus queue
     # https://docs.microsoft.com/en-us/rest/api/servicebus/receive-and-delete-message-destructive-read
-    $servicebusPeekLockRequestUrl = "https://$($ServiceBusNamespace).servicebus.windows.net/$($ServiceBusQueueName)/messages/head";
+    $servicebusPeekLockRequestUrl = "https://$($ServiceBusNamespace).servicebus.chinacloudapi.cn/$($ServiceBusQueueName)/messages/head";
     
     # Generating SAS token to authenticate Service bus Queue to receive messages
     $authorizedSasToken = Get-SasToken -Saskey $Saskey -RequestUri $servicebusPeekLockRequestUrl -SharedAccessPolicyName $SharedAccessPolicyName;
@@ -3357,7 +3358,7 @@ function Login-OxaAccount
             # Credentials for regular Aad Web Application authentication are available.
             $clientSecret = ConvertTo-SecureString -String $AadWebClientAppKey -AsPlainText -Force
             $aadCredential = New-Object System.Management.Automation.PSCredential($AadWebClientId, $clientSecret)
-            Login-AzureRmAccount -ServicePrincipal -TenantId $AadTenantId -SubscriptionName $AzureSubscriptionName -Credential $aadCredential -ErrorAction Stop | Out-Null
+            Login-AzureRmAccount -EnvironmentName AzureChinaCloud -ServicePrincipal -TenantId $AadTenantId -SubscriptionName $AzureSubscriptionName -Credential $aadCredential -ErrorAction Stop | Out-Null
     
             Log-Message "Selecting '$($AzureSubscriptionName)' subscription"
             Select-AzureRMSubscription -SubscriptionName $AzureSubscriptionName | Out-Null

@@ -9,7 +9,7 @@ This deployment extension sets up database backup for the cluster.
 1. _mysql-server-port_: port on the mysql server used for communication (optional)
 1. _backup-storageaccount-name_: the azure storage account used for backups. **2**
 1. _backup-storageaccount-key_: access key for the backup storage account.
-1. _backup-storageaccount-endpointsuffix_: backup storage account endpoint suffix. (optional and defaults to global azure `core.windows.net`)
+1. _backup-storageaccount-endpointsuffix_: backup storage account endpoint suffix.
 1. _backup-local-path_: local path on the target Jumpbox where backups will be temporarily kept before being pushed to the backup azure storage account. Ensure sure there is sufficient space on this partition for a single backup. (optional, defaults to the first disk of attached storage mounted at `/datadisks/disk1`)
 1. _mysql-backup-frequency_: mysql backup frequency. Use cron scheduling notation. (optional, defaults to `11 */4 * * *`)
 1. _mysql-backup-retentiondays_: maximum age in days for a mysql backup. Backups older than this threshold will be purged

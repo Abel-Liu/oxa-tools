@@ -239,7 +239,7 @@
           "osDisk": {
             "name": "[concat(variables('vmName'),'-osdisk')]",
             "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'), '.blob.core.windows.net/', variables('vhdBlobContainer'), '/', variables('vmName'), '-osdisk.vhd')]"
+              "uri": "[concat('http://', variables('storageAccountName'), '.blob.core.chinacloudapi.cn/', variables('vhdBlobContainer'), '/', variables('vmName'), '-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"

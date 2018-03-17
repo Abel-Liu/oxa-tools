@@ -20,6 +20,10 @@
             "type": "string",
             "defaultValue": "Standard_D1_v2",
             "allowedValues": [
+                "Standard_D1",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4",
                 "Standard_D1_v2",
                 "Standard_D2_v2",
                 "Standard_D3_v2",
@@ -39,6 +43,10 @@
             "type": "string",
             "defaultValue": "Standard_D2_v2",
             "allowedValues": [
+                "Standard_D1",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4",
                 "Standard_D1_v2",
                 "Standard_D2_v2",
                 "Standard_D3_v2",
@@ -58,6 +66,10 @@
             "type": "string",
             "defaultValue": "Standard_D2_v2",
             "allowedValues": [
+                "Standard_D1",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4",
                 "Standard_D1_v2",
                 "Standard_D2_v2",
                 "Standard_D3_v2",
@@ -77,6 +89,10 @@
             "type": "string",
             "defaultValue": "Standard_D2_v2",
             "allowedValues": [
+                "Standard_D1",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4",
                 "Standard_D1_v2",
                 "Standard_D2_v2",
                 "Standard_D3_v2",
@@ -674,7 +690,7 @@
         "wamsStorageAccountName": "[concat(toLower(parameters('clusterName')), 'wamssa')]",
         "mediaServicesAccountName": "[concat(toLower(parameters('clusterName')), 'wamsmedia')]",
         "storageAccountType": "Standard_LRS",
-        "storageContainer": "[concat('https://', variables('storageAccountName'),'.blob.core.windows.net/vhds/')]",
+        "storageContainer": "[concat('https://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/')]",
 
         "loadBalancerName": "[concat(parameters('clusterName'), '-lb-', parameters('deploymentSlot'))]",
         "virtualNetworkName": "[concat(parameters('clusterName'), '-vnet')]",

@@ -32,7 +32,7 @@ mongo_replicaset_name=""
 backup_storageaccount_name="${cluster_name}securesa"
 backup_storageaccount_key=""
 backup_local_path="/datadisks/disk1"
-backup_storageaccount_endpoint_suffix="core.windows.net"
+backup_storageaccount_endpoint_suffix="core.chinacloudapi.cn"
 
 # mysql backup settings
 mysql_backup_frequency="11 */4 * * *"   # At minute 11 past every 4th hour.
