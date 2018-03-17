@@ -352,7 +352,7 @@ function Authenticate-AzureRmUser
     }
     else
     {
-        $results = azure login -u $AadWebClientId --service-principal --tenant $AadTenantId -p $AadWebClientAppKey -vv --json | Out-String
+        $results = azure login -e AzureChinaCloud -u $AadWebClientId --service-principal --tenant $AadTenantId -p $AadWebClientAppKey -vv --json | Out-String
         if (!$results.Contains("login command OK"))
         {
             throw "Login failed"
@@ -3374,7 +3374,7 @@ function Login-OxaAccount
             throw "$($AuthenticationCertificateSubject) was not found in the current user certificate store"
         }
 
-        Login-AzureRmAccount -ServicePrincipal -CertificateThumbprint $certificate.thumbprint -ApplicationId $AadWebClientId -TenantId $AadTenantId -ErrorAction Stop | Out-Null
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud -ServicePrincipal -CertificateThumbprint $certificate.thumbprint -ApplicationId $AadWebClientId -TenantId $AadTenantId -ErrorAction Stop | Out-Null
 
         Log-Message "Selecting '$($AzureSubscriptionName)' subscription"
         Select-AzureRMSubscription -SubscriptionName $AzureSubscriptionName | Out-Null

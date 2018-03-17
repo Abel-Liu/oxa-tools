@@ -159,6 +159,7 @@ authenticate-azureuser()
     # this call requires azure cli2
 
     # login
+	az cloud set --name AzureChinaCloud
     results=`az login -u $aad_webclient_id --service-principal --tenant $aad_tenant_id -p $aad_webclient_appkey --output json`
     exit_on_error "Could not login to azure with the provided service principal credential from '${HOSTNAME}' !" "${error_mobilerestapi_update_failed}" "${notification_email_subject}" "${cluster_admin_email}"
 
