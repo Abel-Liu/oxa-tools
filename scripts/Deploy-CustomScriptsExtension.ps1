@@ -64,9 +64,9 @@ Param(
         [Parameter(Mandatory=$true)][string]$PrimaryKey,
         [Parameter(Mandatory=$false)][string]$OmsWorkspaceId="-",
         [Parameter(Mandatory=$true)][string]$DeploymentVersionId,
-        [Parameter(Mandatory=$false)][string]$OxaToolsGithubAccountName="Microsoft",
+        [Parameter(Mandatory=$false)][string]$OxaToolsGithubAccountName="abel-liu",
         [Parameter(Mandatory=$false)][string]$OxaToolsGithubProjectName="oxa-tools",
-        [Parameter(Mandatory=$false)][string]$OxaToolsGithubBranch="oxa/master.fic ",
+        [Parameter(Mandatory=$false)][string]$OxaToolsGithubBranch="master.fic.china",
         [Parameter(Mandatory=$false)][switch]$Upgrade
      )
 
