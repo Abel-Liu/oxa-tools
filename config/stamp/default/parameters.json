@@ -15,13 +15,13 @@
             "value": "Standard_D1"
         },
         "mongoVmSize": {
-            "value": "Standard_D1"
+            "value": "Standard_D2"
         },
         "mysqlVmSize": {
-            "value": "Standard_D1"
+            "value": "Standard_D2"
         },
         "frontendVmSize": {
-            "value": "Standard_D2"
+            "value": "Standard_D3"
         },
         "adminUsername": {
             "value": "lexoxaadmin"
@@ -254,7 +254,7 @@
             "value": ""
         },
       "baseDomain": {
-        "value": "{CLUSTERNAME}-tm.trafficmanager.net"
+        "value": "{CLUSTERNAME}-tm.trafficmanager.cn"
       },
         "domainSeparator": {
             "value": "-"
